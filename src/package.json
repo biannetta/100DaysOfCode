@@ -1,0 +1,29 @@
+{
+  "name": "100daysofcode",
+  "version": "1.0.0",
+  "description": "100 Days of Coding challenge to build a backbone JS web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biannetta/100DaysOfCode.git"
+  },
+  "keywords": [
+    "100daysofcode",
+    "challenge",
+    "100days",
+    "js",
+    "backbone"
+  ],
+  "author": "biannetta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/biannetta/100DaysOfCode/issues"
+  },
+  "homepage": "https://github.com/biannetta/100DaysOfCode#readme",
+  "devDependencies": {
+    "backbone": "^1.4.0"
+  }
+}
