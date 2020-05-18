@@ -1,7 +1,9 @@
 import { Activity } from "./models/index.js";
+import { testActivities } from "./_helpers/_testData.js";
 
-let activities = [];
-activities[0] = new Activity({type: 'Plank', quantity: 2});
-activities[1] = new Activity({type: 'Situps', quantity: 25});
+var activities = testActivities.reduce(function (accum, data) {
+  accum.push(new Activity({type: data.type, quantity: data.quantity}));
+  return accum;
+},[]);
 
 console.log(activities);
