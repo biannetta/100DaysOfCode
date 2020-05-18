@@ -1,9 +1,7 @@
-let appName = "Quarantine Challenge";
-let appBody = document.getElementById('app');
+import { Activity } from "./models/index.js";
 
-let appTitle = document.createElement("h1");
-appTitle.innerText = appName;
+let activities = [];
+activities[0] = new Activity({type: 'Plank', quantity: 2});
+activities[1] = new Activity({type: 'Situps', quantity: 25});
 
-appBody.append(appTitle);
-
-console.log(`${appName}`);
+console.log(activities);
