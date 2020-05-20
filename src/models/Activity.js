@@ -5,7 +5,7 @@ const activityTypes = {
   PLANKS: "Planks"
 }
 
-export var Activity = Backbone.Model.extend({
+export const Activity = Backbone.Model.extend({
   defaults: {
     type: '',
     quantity: 0,
