@@ -1,1 +1,1 @@
-export { ActivitiesView } from "./Activities.js";
+export { ActivityItemView } from "./ActivityItemView.js";

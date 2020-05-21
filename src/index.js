@@ -1,8 +1,8 @@
 import { Activity } from "./models/index.js";
-import { ActivitiesView } from "./views/index.js";
+import { ActivityItemView } from "./views/index.js";
 import { testActivities } from "./_helpers/_testData.js";
 
-const appContent = document.getElementById("content");
+const appContent = document.getElementById("activity-list");
 
 // Step 1: Backbone Models
 const activities = testActivities.reduce((accum, data) => {
@@ -11,11 +11,7 @@ const activities = testActivities.reduce((accum, data) => {
 },[]);
 
 // Step 2: Backbone Views
-let activityList = document.createElement('div');
 activities.forEach( activity => {
-  let activityView = new ActivitiesView({ model: activity });
-  activityList.appendChild(activityView.render().el);
+  let activityView = new ActivityItemView({ model: activity, el: appContent });
+  activityView.render();
 });
-
-appContent.appendChild(activityList);
-
