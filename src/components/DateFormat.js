@@ -9,10 +9,10 @@ let formatOptions = {
 const dtFormatter = new Intl.DateTimeFormat('en', formatOptions)
 
 export const DateView = Backbone.View.extend({
-
+  tagName: 'div',
   render: function () {
     return html`
       ${dtFormatter.format(this.model.get('datetime'))}
-    `;
+    `; 
   }
 })

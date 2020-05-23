@@ -12,10 +12,10 @@ export const ActivityItemView = Backbone.View.extend ({
   },
 
   render: function () {
-    const formattedDate = new DateView({ model: this.model});
+    const formattedDate = new DateView({ model: this.model, className: 'table__col--date' });
 
-    let template = html`
-      <div class="activity__date">${formattedDate.render()}</div>
+    this.el.innerHTML = html`
+      ${formattedDate.render()}
       <div>${this.model.get('type')}</div>
       <div>${this.model.get('quantity')}</div>
     `;
@@ -26,8 +26,7 @@ export const ActivityItemView = Backbone.View.extend ({
     
     //This works because the jQuery implementation of append() accepts strings
     // this.$el.append(template);
-    this.el.innerHTML = template;
-
+    
     return this;
   }
 });
