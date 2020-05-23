@@ -8,5 +8,10 @@
 /* Grid style layout */
 .table {
   display: grid;
-  grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+  grid-template: 1fr / 1fr;
+}
+.table__row {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }

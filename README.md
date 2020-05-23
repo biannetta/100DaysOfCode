@@ -17,7 +17,7 @@ I've outlined the following learning objectives for this project
 - [ ] **Data Binding** I've always used helpers with data binding, but I would like to get as close to the metal as possible with this and understand whats under the hood
 - [ ] **Shadow DOM** Just exactly what hides in the shadows (excuse the pun) of this feature that is being leveraged in every front-end framework
 - [ ] **Build Tools** Utilizing NPM package management to maintain dependencies (which should be minimal) and build scripts
-
+- [ ] **Documentation** Look at better documenting my code
 
 __The App__
 

@@ -11,6 +11,7 @@ export const Activity = Backbone.Model.extend({
     quantity: 0,
     datetime: Date.now(),
   },
+  urlRoot: '/activities',
   validate: function (attrs) {
     console.log(attrs);
   }

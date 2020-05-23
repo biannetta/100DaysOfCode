@@ -4,6 +4,13 @@ const html = String.raw;
 
 export const ActivityItemView = Backbone.View.extend ({
   tagName: 'div',
+
+  className: 'table__row',
+  
+  initialize: function (options) {
+    this.options = options || {};
+  },
+
   render: function () {
     const formattedDate = new DateView({ model: this.model});
 
@@ -18,8 +25,9 @@ export const ActivityItemView = Backbone.View.extend ({
     // this.el.appendChild(template);
     
     //This works because the jQuery implementation of append() accepts strings
-    this.$el.append(template);
-    
+    // this.$el.append(template);
+    this.el.innerHTML = template;
+
     return this;
   }
 });
