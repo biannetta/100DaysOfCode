@@ -29,16 +29,15 @@
    </script>
 
    <script type="text/template" id="activity-item">
-    <div><%= datetime %></div>
-    <div><%= type %></div>
-    <div><%= quantity %></div>
+    <div><%= formatted_activity_date %></div>
+    <div><%= activity_type %></div>
+    <div><%= activity_quantity %></div>
    </script> 
    
    <!-- Javaascript -->
    <script src="node_modules/underscore/underscore.js"></script>
    <script src="node_modules/jquery/dist/jquery.js"></script>
    <script src="node_modules/backbone/backbone.js"></script>
-   <script type="module" src="_helpers/_testBackend.js"></script>
    <script type="module" src="index.js"></script>
   </body>
 </html>
