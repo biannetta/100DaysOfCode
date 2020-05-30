@@ -14,6 +14,9 @@ let activities = new Activities();
 // call to Backbone.sync
 activities.fetch();
 
+let groupedActivities = activities.groupBy('type');
+console.log(groupedActivities);
+
 // Views
 let activitiesList = new ActivityListView({collection: activities});
 activityTable.appendChild(activitiesList.render().el);
