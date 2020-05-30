@@ -5,9 +5,13 @@ const appContent = document.getElementById("app-content");
 const activityTable = document.getElementById("activities");
 
 // Collections
-let activities = new Activities([]);
+let activities = new Activities();
 
 // Sync with Test Backend
+// ======================
+// makes a sync call on the collections model
+// which has a sync property to override the default
+// call to Backbone.sync
 activities.fetch();
 
 // Views

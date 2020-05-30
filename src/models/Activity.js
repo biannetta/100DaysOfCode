@@ -5,6 +5,11 @@ const activityTypes = {
   PLANKS: "Planks"
 }
 
+/**
+ * A Backbone Model of an Activity
+ * 
+ * Utilized by the Activities Collection
+ */
 export const Activity = Backbone.Model.extend({
   defaults: {
     type: '',
@@ -14,7 +19,7 @@ export const Activity = Backbone.Model.extend({
   parse: (resp, opt) => {
     console.log([resp, opt]);
   },
-  urlRoot: '/activities',
+  urlRoot: '/activity',
   validate: function (attrs) {
     console.log(attrs);
   }
