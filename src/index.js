@@ -12,11 +12,14 @@ let activities = new Activities();
 // makes a sync call on the collections model
 // which has a sync property to override the default
 // call to Backbone.sync
-activities.fetch();
-
-let groupedActivities = activities.groupBy('type');
-console.log(groupedActivities);
+activities.fetch({
+  success: function (collection, resp, options) {
+    console.log(resp);
+  }
+});
 
 // Views
 let activitiesList = new ActivityListView({collection: activities});
 activityTable.appendChild(activitiesList.render().el);
+
+let groupBtn = document.getElementById('activities-grouping');
