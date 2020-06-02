@@ -11,9 +11,8 @@ export const ActivityBackend = function (method, model, options) {
   // model.trigger("request", model, xmlHTTPRequestObject, options);
 
   if (method == "read") {
-    testActivities.map((data) => {
-      model.add(data);
-    });
+    model[options.reset?'reset':'set'](testActivities);
+    model.trigger('change');
   } else {
     console.log(method);
   }
