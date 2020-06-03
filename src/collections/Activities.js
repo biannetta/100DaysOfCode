@@ -9,6 +9,9 @@ import { ActivityBackend } from "../_backend/_ActivityBackend.js";
  */
 export const Activities = Backbone.Collection.extend({
   model: Activity,
+  preinitialize() {
+    this.on("change", () => console.log('here'));
+  },
   url: "/activities",
   sync: ActivityBackend,
   comparator: 'type'
