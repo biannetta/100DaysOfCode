@@ -30,13 +30,20 @@
       </div>
     </script>
       
-    <script type="text/template" id="activity-item">
+    <script type="text/template" id="activity-item--display">
       <div><%= formatted_activity_date %></div>
       <div><%= activity_type %></div>
       <div><%= activity_quantity %></div>
     </script> 
    
-    <!-- Javaascript -->
+    <script type="text/template" id="activity-item--edit">
+      <div><%= activity_date %></div>
+      <div><input type="text" name="type" value="<%= activity_type %>" /></div>
+      <div><input type="number" name="quantity" value="<%= activity_quantity %>" /></div>
+      <button>Save</button>
+    </script> 
+   
+    <!-- Javascript -->
     <script src="node_modules/underscore/underscore.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/backbone/backbone.js"></script>

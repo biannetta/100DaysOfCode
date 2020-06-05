@@ -1,6 +1,5 @@
 import { Activities } from "./collections/Activities.js";
-import { ActivityListView } from "./views/index.js";
-import { AppView } from "./views/index.js";
+import { ActivityListView, AppView, Edit_ActivityItemView } from "./views/index.js";
 
 const app = document.getElementById("app");
 
@@ -24,9 +23,9 @@ dataTable.appendChild(activitiesList.render().el);
 const btnFetchData = document.getElementById("activities-fetch");
 
 btnFetchData.onclick = () => {
-  activities.fetch({
-    success: function (collection, resp, options) {
-      console.log(resp);
-    }
-  });
+  activities.fetch();
 };
+
+// Adding New/Editing Activities
+const editor = new Edit_ActivityItemView();
+app.appendChild(editor.render().el);
