@@ -6,6 +6,9 @@ export const ActivityListView = Backbone.View.extend ({
   initialize() {
     this.listenTo(this.collection, "change", this.render);
   },
+  events: {
+    'click .button_load': 'loadData'
+  },
   render: function () {
     this.$el.empty();
     this.$el.append(this.template());
@@ -16,5 +19,13 @@ export const ActivityListView = Backbone.View.extend ({
     });
     
     return this;
+  },
+  loadData: function () {
+    // Sync with Test Backend
+    // ======================
+    // makes a sync call on the collections model
+    // which has a sync property to override the default
+    // call to Backbone.sync
+    this.collection.fetch();
   }
 });
