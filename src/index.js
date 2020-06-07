@@ -1,5 +1,4 @@
 import { Activities } from "./collections/Activities.js";
-import { Activity } from "./models/Activity.js";
 import { ActivityListView, AppView, Edit_ActivityItemView } from "./views/index.js";
 
 const app = document.getElementById("app");
@@ -17,5 +16,5 @@ const dataTable = document.getElementsByClassName('main__content')[0];
 dataTable.appendChild(activitiesList.render().el);
 
 // Adding New/Editing Activities
-const editor = new Edit_ActivityItemView({model: new Activity()});
+const editor = new Edit_ActivityItemView();
 app.appendChild(editor.render().el);
