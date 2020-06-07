@@ -7,7 +7,7 @@ export const ActivityListView = Backbone.View.extend ({
     this.listenTo(this.collection, "change", this.render);
   },
   events: {
-    'click .button_load': 'loadData'
+    'click .button--load': 'loadData'
   },
   render: function () {
     this.$el.empty();
