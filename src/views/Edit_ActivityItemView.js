@@ -1,5 +1,4 @@
 import { Activity } from "../models/Activity.js";
-import { dtFormatter } from "../_helpers/_dateFormatter.js";
 
 export const Edit_ActivityItemView = Backbone.View.extend({
   tagName: 'div',
@@ -12,13 +11,7 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     this.model = new Activity();
   },
   render: function () {
-    let data = this.model || { 
-      formatted_activity_date: dtFormatter.format(Date.now()),
-      activity_type: "",
-      activity_quantity: ""
-    }
-
-    this.$el.html(this.template(data));
+    this.$el.html(this.template(this.model.toJSON()));
     this.inputs = document.getElementsByTagName('input');
 
     return this;
@@ -27,11 +20,12 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     this.model.set({
       'type': this.inputs[0].value,
       'quantity': this.inputs[1].value
-    });    
-    console.log(this.model);
+    });
+    this.model.save();
+    console.log(this.inputs);
   },
   onInputChange: function (e) {
-    console.log(e);
-    console.log([this.inputs, this.model]);
+    console.log(e.type);
+    console.log(e.currentTarget.value);
   }
 })

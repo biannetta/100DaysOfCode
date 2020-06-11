@@ -13,6 +13,10 @@ export const ActivityBackend = function (method, model, options) {
   if (method == "read") {
     model[options.reset?'reset':'set'](testActivities);
     model.trigger('change');
+  }
+  else if (method == "create") {
+    testActivities.push(model.toJSON());
+    model.trigger('change');
   } else {
     console.log(method);
   }

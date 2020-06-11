@@ -1,4 +1,4 @@
-export const testActivities = [
+export let testActivities = [
   {id: 1, type: "Plank", quantity: 2, datetime: new Date(2020,2,20)},
   {id: 2, type: "Situp", quantity: 25, datetime: new Date(2020,2,20)},
   {id: 3, type: "Pushup", quantity: 25, datetime: new Date(2020,2,20)},

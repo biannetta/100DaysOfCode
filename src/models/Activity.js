@@ -1,3 +1,5 @@
+import { ActivityBackend } from "../_backend/_ActivityBackend.js";
+
 const activityTypes = {
   SITUPS: "Situps",
   PUSHUPS: "Pushups",
@@ -16,5 +18,6 @@ export const Activity = Backbone.Model.extend({
     quantity: 0,
     datetime: Date.now(),
   },
+  sync: ActivityBackend,
   urlRoot: '/activity',
 });
