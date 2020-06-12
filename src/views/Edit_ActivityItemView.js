@@ -24,5 +24,6 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     this.model.save();
   },
   onInputChange: function (e) {
+    console.log(e);
   }
 })
