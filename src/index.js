@@ -12,9 +12,9 @@ let activitiesList = new ActivityListView({collection: activities});
 
 app.appendChild(appView.render().el);
 
-const dataTable = document.getElementsByClassName('main__content')[0];
-dataTable.appendChild(activitiesList.render().el);
+const main = document.getElementsByClassName('main__content')[0];
+main.appendChild(activitiesList.render().el);
 
 // Adding New/Editing Activities
 const editor = new Edit_ActivityItemView();
-app.appendChild(editor.render().el);
+main.appendChild(editor.render().el);
