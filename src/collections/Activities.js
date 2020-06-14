@@ -14,5 +14,8 @@ export const Activities = Backbone.Collection.extend({
   },
   url: "/activities",
   sync: ActivityBackend,
-  comparator: 'type'
+  comparator: 'type',
+  filterByType: function (type) {
+    return this.where({type: type})
+  }
 })

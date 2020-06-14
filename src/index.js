@@ -10,6 +10,9 @@ let activities = new Activities();
 let appView = new AppView();
 let activitiesList = new ActivityListView({collection: activities});
 
+activities.fetch();
+console.log(activities.filterByType('Plank'));
+
 app.appendChild(appView.render().el);
 
 const main = document.getElementsByClassName('main__content')[0];
