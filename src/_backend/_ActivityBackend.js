@@ -16,7 +16,7 @@ export const ActivityBackend = function (method, model, options) {
   }
   else if (method == "create") {
     testActivities.push(model.toJSON());
-    model.trigger('change');
+    model.trigger('update');
   } else {
     console.log(method);
   }

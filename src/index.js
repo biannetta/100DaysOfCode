@@ -11,7 +11,9 @@ let appView = new AppView();
 let activitiesList = new ActivityListView({collection: activities});
 
 activities.fetch();
-console.log(activities.filterByType('Plank'));
+
+// Filter activities collection
+// console.log(activities.filterByType('Plank'));
 
 app.appendChild(appView.render().el);
 
