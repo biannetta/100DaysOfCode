@@ -23,14 +23,10 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     return this;
   },
   saveActivity: function () {
-    console.log(this.inputs);
     this.model.set({
       'type': this.inputs[0].selectedOptions[0].value,
       'quantity': this.inputs[1].value
     });
     this.model.save();
-  },
-  onInputChange: function (e) {
-    console.log(e);
   }
 })

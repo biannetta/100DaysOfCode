@@ -21,5 +21,5 @@ const main = document.getElementsByClassName('main__content')[0];
 main.appendChild(activitiesList.render().el);
 
 // Adding New/Editing Activities
-const editor = new Edit_ActivityItemView();
-main.appendChild(editor.render().el);
+// const editor = new Edit_ActivityItemView();
+// main.appendChild(editor.render().el);
