@@ -7,22 +7,19 @@
     <link rel="stylesheet" href="src/css/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="app__header">#100DaysOfCoding</header>
+      <div class="app__content"></div>
+      <footer class="app__footer">Made with ☕️ by <a href="https://github.com/biannetta/100DaysOfCode">@biannetta</a></footer>
+    </div>
 
     <!-- JS Templates -->
-    <script type="text/template" id="app-content">
-      <header>#100DaysOfCoding</header>
-      <div class="main__content">
-      </div>
-      <footer>Made with ☕️ by <a href="https://github.com/biannetta/100DaysOfCode">@biannetta</a></footer>
-    </script>
-
     <script type="text/template" id="activity-table">
       <!-- Table Listing for Activities -->
       <div class="table__row table__row--title">  
         <h3 class="table__title">Activities</h3>
       </div>
-      <div id="data-entry" class="table__row">
+      <div id="data-entry" class="table__row table__row--edit">
       </div>
       <div class="table__row table__row--header">
         <div class="table__row__col--title">Date</div>

@@ -1,25 +1,5 @@
-import { Activities } from "./collections/Activities.js";
-import { ActivityListView, AppView, Edit_ActivityItemView } from "./views/index.js";
-
-const app = document.getElementById("app");
-
-// Collections
-let activities = new Activities();
+import { AppView } from "./views/index.js";
 
 // Views
-let appView = new AppView();
-let activitiesList = new ActivityListView({collection: activities});
-
-activities.fetch();
-
-// Filter activities collection
-// console.log(activities.filterByType('Plank'));
-
-app.appendChild(appView.render().el);
-
-const main = document.getElementsByClassName('main__content')[0];
-main.appendChild(activitiesList.render().el);
-
-// Adding New/Editing Activities
-// const editor = new Edit_ActivityItemView();
-// main.appendChild(editor.render().el);
+let appView = new AppView({ el: '#app'});
+appView.render();

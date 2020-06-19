@@ -1,18 +1,28 @@
+import { Activities } from "../collections/Activities.js";
 import { ActivityItemView } from "./ActivityItemView.js";
 import { Edit_ActivityItemView } from "./Edit_ActivityItemView.js";
 
 export const ActivityListView = Backbone.View.extend ({
   tagName: 'div',
-  className: 'table',
-  template: _.template(document.getElementById("activity-table").innerHTML),
-  initialize() {
-    this.listenTo(this.collection, "change", this.render);
+  className: 'table', 
+  template: _.template($("#activity-table").html()),
+  initialize: function () {
+    // Create new collection of Activities
+    this.collection = new Activities();
+
+    // Get DOM elements
+    this.$list = $('.table');
+
+    // Listen for events on Collection
+    this.listenTo(this.collection, "change", () => { console.log('collection change trigger')});
+    
+    // Init collection
+    this.loadData();
   },
   events: {
     'click .button--load': 'loadData'
   },
   render: function () {
-    this.$el.empty();
     this.$el.append(this.template());
     
     let editActivityView = new Edit_ActivityItemView();

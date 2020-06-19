@@ -1,13 +1,16 @@
+import { ActivityListView } from './ActivityListView.js';
+
 export const AppView = Backbone.View.extend ({
-  template: _.template(document.getElementById("app-content").innerHTML),
-  events: {
-    'click button': 'loadData'
+  initialize: function () {
+    // Init DOM elements
+    this.$content = $('.app__content');
   },
   render: function() {
-    this.$el.append(this.template());
+    // Create new ActivityList
+    let activityList = new ActivityListView();
+
+    this.$content.html(activityList.render().el);
+
     return this;
   },
-  loadData: function () {
-    console.log('here');
-  }
 });
