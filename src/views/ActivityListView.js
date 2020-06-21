@@ -10,30 +10,25 @@ export const ActivityListView = Backbone.View.extend ({
     // Create new collection of Activities
     this.collection = new Activities();
 
-    // Get DOM elements
-    this.$list = $('.table');
-
     // Listen for events on Collection
-    this.listenTo(this.collection, "change", () => { console.log('collection change trigger')});
+    this.listenTo(this.collection, "add", this.addItem);
     
     // Init collection
     this.loadData();
-  },
-  events: {
-    'click .button--load': 'loadData'
   },
   render: function () {
     this.$el.append(this.template());
     
     let editActivityView = new Edit_ActivityItemView();
     this.$el.find('#data-entry').html(editActivityView.render().el);
-
-    this.collection.forEach( activity => {
-      let activityView = new ActivityItemView({ model: activity });
-      this.el.appendChild(activityView.render().el);
-    });
     
+    this.collection.each(this.addItem, this);
+
     return this;
+  },
+  addItem: function (activity) {
+    let activityView = new ActivityItemView({ model: activity });
+    this.$el.append(activityView.render().el);
   },
   loadData: function () {
     // Sync with Test Backend
@@ -41,6 +36,8 @@ export const ActivityListView = Backbone.View.extend ({
     // makes a sync call on the collections model
     // which has a sync property to override the default
     // call to Backbone.sync
-    this.collection.fetch();
+    //
+    // NB: 'reset' fires only once entire collection loaded
+    this.collection.fetch({reset: true});
   }
 });
