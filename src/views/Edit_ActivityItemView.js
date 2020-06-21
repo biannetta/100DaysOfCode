@@ -8,14 +8,10 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     'click .button--save': 'saveActivity',
     'change input.input_edit': 'onInputChange',
   },
-  preinitialize: function () {
-    this.model = new Activity();
-  },
   render: function () {
     this.$el.html(this.template({
-      formatted_activity_date: dtFormatter.format(this.model.get('datetime')),
-      type: this.model.get('type'),
-      quantity: this.model.get('quantity'),
+      type: '',
+      quantity: 0,
       options: ['Planks','Cardio','Situps','Pushups','Planks']
     }));
     this.inputs = document.getElementsByClassName('input_edit');
@@ -23,10 +19,9 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     return this;
   },
   saveActivity: function () {
-    this.model.set({
+    this.collection.create({
       'type': this.inputs[0].selectedOptions[0].value,
       'quantity': this.inputs[1].value
     });
-    this.model.save();
   }
 })

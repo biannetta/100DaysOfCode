@@ -19,7 +19,7 @@ export const ActivityListView = Backbone.View.extend ({
   render: function () {
     this.$el.append(this.template());
     
-    let editActivityView = new Edit_ActivityItemView();
+    let editActivityView = new Edit_ActivityItemView({ collection: this.collection });
     this.$el.find('#data-entry').html(editActivityView.render().el);
     
     this.collection.each(this.addItem, this);
