@@ -12,6 +12,8 @@ export const ActivityListView = Backbone.View.extend ({
 
     // Listen for events on Collection
     this.listenTo(this.collection, "add", this.addItem);
+    this.listenTo(this.collection, "request", () => console.log('request'));
+    this.listenTo(this.collection, "sync", () => console.log('sync'));
     
     // Init collection
     this.loadData();

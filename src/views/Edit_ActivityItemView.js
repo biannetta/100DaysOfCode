@@ -19,6 +19,9 @@ export const Edit_ActivityItemView = Backbone.View.extend({
     return this;
   },
   saveActivity: function () {
+    // collection.create will create a new model in the collection
+    // and will trigger the following events on the collection:
+    // add -> request (sending the model to the server) -> sync (fetch new collection)
     this.collection.create({
       'type': this.inputs[0].selectedOptions[0].value,
       'quantity': this.inputs[1].value
