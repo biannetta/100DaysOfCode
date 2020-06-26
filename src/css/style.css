@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+/* Hero Styling */
+.hero {
+  font-size: 22px;
+  text-align: center;
+}
+.hero--title {
+  font-weight: bold;
+}
+
 /* Grid style layout */
 .table {
   display: grid;

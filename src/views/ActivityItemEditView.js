@@ -1,9 +1,6 @@
-import { dtFormatter } from "../_helpers/_dateFormatter.js";
-import { Activity } from "../models/Activity.js";
-
-export const Edit_ActivityItemView = Backbone.View.extend({
+export const ActivityItemEditView = Backbone.View.extend({
   tagName: 'div',
-  template: _.template(document.getElementById("activity-item--edit").innerHTML),
+  template: _.template($("#activity-data-entry").html()),
   events: {
     'click .button--save': 'saveActivity',
     'change input.input_edit': 'onInputChange',
