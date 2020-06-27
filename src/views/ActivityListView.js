@@ -2,6 +2,7 @@ import { ActivityItemView } from "./ActivityItemView.js";
 
 export const ActivityListView = Backbone.View.extend ({
   tagName: 'div',
+  className: 'app__panel',
   template: _.template($("#activity-table").html()),
   initialize: function () {
     // Listen for events on Collection
@@ -15,13 +16,15 @@ export const ActivityListView = Backbone.View.extend ({
   render: function () {
     this.$el.append(this.template());
     
+    this.$table = this.$el.find(".table");
+
     this.collection.each(this.addItem, this);
 
     return this;
   },
   addItem: function (activity) {
     let activityView = new ActivityItemView({ model: activity });
-    this.$el.append(activityView.render().el);
+    this.$table.append(activityView.render().el);
   },
   loadData: function () {
     // Sync with Test Backend

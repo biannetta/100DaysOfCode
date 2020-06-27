@@ -1,5 +1,6 @@
 export const ActivityItemEditView = Backbone.View.extend({
   tagName: 'div',
+  className: 'app__panel',
   template: _.template($("#activity-data-entry").html()),
   events: {
     'click .button--save': 'saveActivity',
