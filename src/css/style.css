@@ -15,6 +15,12 @@
 }
 
 /* Panel Styling */
+.app__content {
+  display: flex;
+}
+.app__panel {
+  width: 100%;
+}
 
 /* Grid style layout */
 .table {
