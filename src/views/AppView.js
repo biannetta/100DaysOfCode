@@ -1,10 +1,15 @@
 import { ActivityListView, ActivityItemEditView } from './index.js';
 import { Activities } from '../collections/Activities.js';
+import { AppRouter } from '../routers/router.js';
 
 export const AppView = Backbone.View.extend ({
   initialize: function () {
     // Create new collection of Activities
     this.activities = new Activities();
+
+    // Instantiate Router
+    this.router = new AppRouter({ collection: this.activities });
+    Backbone.history.start();
 
     // Init DOM elements
     this.$content = $('.app__content');

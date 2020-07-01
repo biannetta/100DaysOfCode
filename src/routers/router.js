@@ -1,8 +1,15 @@
+import { Activities } from "../collections/Activities.js";
+
 export const AppRouter = Backbone.Router.extend({
   routes: {
-    '*other': 'defaultRoute',
+    '*filter': 'filterCollection',
   },
-  defaultRoute: function (other) {
-    console.log(other);
+  filterCollection: function (filter) {
+    
+    let activities = new Activities();
+    activities.fetch();
+    let filteredActivities = activities.filterByType(filter);
+
+    console.log(filteredActivities);
   }
 });
