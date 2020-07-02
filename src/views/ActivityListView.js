@@ -9,7 +9,7 @@ export const ActivityListView = Backbone.View.extend ({
     this.listenTo(this.collection, "add", this.addItem);
     this.listenTo(this.collection, "request", () => console.log('request'));
     this.listenTo(this.collection, "sync", () => console.log('sync'));
-    
+    this.listenTo(this.collection, "filter", this.filterData);
     // Init collection
     this.loadData();
   },
@@ -35,5 +35,8 @@ export const ActivityListView = Backbone.View.extend ({
     //
     // NB: 'reset' fires only once entire collection loaded
     this.collection.fetch({reset: true});
+  },
+  filterData: function () {
+    console.log('filter the collection view');
   }
 });
