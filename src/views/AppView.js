@@ -4,6 +4,9 @@ export const AppView = Backbone.View.extend ({
   initialize: function () {
     // Init DOM elements
     this.$content = $('.app__content');
+    
+    // 
+    this.listenTo(this.collection, 'filter', () => console.log('test'));
   },
   render: function() {
     // Create new ActivityList
