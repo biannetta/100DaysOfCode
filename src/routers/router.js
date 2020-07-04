@@ -5,7 +5,6 @@ export const AppRouter = Backbone.Router.extend({
     '*filter': 'filterCollection',
   },
   filterCollection: function (filter) {
-    let activities = new Activities();
-    activities.trigger('filter');
+    Activities.trigger('filter');
   }
 });

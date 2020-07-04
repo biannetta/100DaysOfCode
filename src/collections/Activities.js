@@ -7,7 +7,7 @@ import { ActivityBackend } from "../_backend/_ActivityBackend.js";
  * Overrides the sync method leveraging a defined set of 
  * activity data from _helpers/_testData.js
  */
-export const Activities = Backbone.Collection.extend({
+const ActivityCollection = Backbone.Collection.extend({
   model: Activity,
   url: "/activities",
   sync: ActivityBackend,
@@ -15,4 +15,9 @@ export const Activities = Backbone.Collection.extend({
   filterByType: function (type) {
     return this.where({type: type})
   }
-})
+});
+
+// Exporting out an instance of the ActivityCollection model
+// defined with 'let' allows the creation of one collection of
+// Activities througout the namespace of the application
+export let Activities = new ActivityCollection();
