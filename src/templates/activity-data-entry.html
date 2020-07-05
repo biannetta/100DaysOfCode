@@ -1,0 +1,17 @@
+<div class="table">
+  <div class="table__row">
+    <div class="table__row__col table__col--label">Activity Type</div>
+      <select class="input_edit" name="type">
+      <% for (i in options) { %>
+        <option><%= options[i] %></option>
+      <% } %>
+      </select>
+    </div>
+    <div class="table__row">
+      <div class="table__row__col table__row__col--label">Quantity</div>
+        <input class="input_edit" type="number" placeholder="Quantity" name="quantity" value="<%= quantity %>" />
+      </div>
+    </div>
+    <button class="button button--save">Save</button>
+  </div>
+</div>

@@ -3,7 +3,7 @@ import { dtFormatter } from "../_helpers/_dateFormatter.js";
 export const ActivityItemView = Backbone.View.extend ({
   tagName: 'div',
   className: 'table__row',
-  template: _.template(document.getElementById("activity-item--display").innerHTML),
+  template: _.template($("#activity-item--display").html()),
   render: function () {
     const { datetime, type, quantity } = this.model.attributes;
     this.$el.html(this.template({
