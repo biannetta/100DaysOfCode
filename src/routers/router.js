@@ -5,8 +5,8 @@ export const AppRouter = Backbone.Router.extend({
     '*filter': 'filterCollection',
   },
   filterCollection: function (filter) {
-    let filteredList = Activities.filterByType('Plank');
+    let filteredList = Activities.filterByType(filter);
     Activities.reset(filteredList);
-    // Activities.trigger('filter');
+    Activities.trigger('filter');
   }
 });

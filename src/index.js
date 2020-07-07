@@ -11,4 +11,6 @@ let appView = new AppView({
   el: '#app',
   collection: Activities
 });
+
 appView.render();
+Activities.fetch();

@@ -9,7 +9,7 @@ export const ActivityListView = Backbone.View.extend ({
     this.listenTo(this.collection, "add", this.addItem);
     this.listenTo(this.collection, "request", () => console.log('request'));
     this.listenTo(this.collection, "sync", () => console.log('sync'));
-    this.listenTo(this.collection, "filter", this.filterData);
+    this.listenTo(this.collection, "filter", this.addItems);
   },
   render: function () {
     this.$el.append(this.template());
@@ -19,6 +19,10 @@ export const ActivityListView = Backbone.View.extend ({
     this.collection.each(this.addItem, this);
 
     return this;
+  },
+  addItems: function () {
+    this.$table.empty();
+    this.collection.each(this.addItem, this);
   },
   addItem: function (activity) {
     let activityView = new ActivityItemView({ model: activity });
