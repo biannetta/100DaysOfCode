@@ -9,7 +9,8 @@ export const ActivityItemView = Backbone.View.extend ({
     this.$el.html(this.template({
       formatted_activity_date: dtFormatter.format(datetime), 
       activity_type: type, 
-      activity_quantity: quantity}));
+      activity_quantity: quantity
+    }));
     return this;
   }
 });

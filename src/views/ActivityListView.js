@@ -25,7 +25,10 @@ export const ActivityListView = Backbone.View.extend ({
     this.collection.each(this.addItem, this);
   },
   addItem: function (activity) {
-    let activityView = new ActivityItemView({ model: activity });
+    let activityView = new ActivityItemView({ 
+      model: activity,
+      attributes: { "data-type": activity.get('type') }
+    });
     this.$table.append(activityView.render().el);
   },
   filterData: function () {
