@@ -4,6 +4,9 @@ export const ActivityListView = Backbone.View.extend ({
   tagName: 'div',
   className: 'app__panel',
   template: _.template($("#activity-table").html()),
+  events: {
+    "keydown .filter": "filterData",
+  },
   initialize: function () {
     // Listen for events on Collection
     this.listenTo(this.collection, "add", this.addItem);
@@ -31,7 +34,15 @@ export const ActivityListView = Backbone.View.extend ({
     });
     this.$table.append(activityView.render().el);
   },
-  filterData: function () {
-    console.log('filter the collection view');
+  filterData: function (event) {
+    let filter = event.target.value.toLowerCase();
+
+    if (filter.length < 3) {
+      return;
+    }
+
+    this.$table.find(".table__row").filter(() => {
+      
+    });
   }
 });
