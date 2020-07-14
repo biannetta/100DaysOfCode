@@ -37,12 +37,15 @@ export const ActivityListView = Backbone.View.extend ({
   filterData: function (event) {
     let filter = event.target.value.toLowerCase();
 
-    if (filter.length < 3) {
-      return;
-    }
-
-    this.$table.find(".table__row").filter(() => {
+    this.$table.find(".table__row--data").filter( function () {
+      // NB: Cannot use the ES6 function here because I require
+      //     this to be bound to the function scope of .filter()
+      //     and not the entire View object
+      let $row = $(this);
       
+      // .toggle accepts a true/false value in order to determine 
+      //  if the selected item will be hidden
+      $row.toggle($row.text().toLowerCase().indexOf(filter) > -1);
     });
   }
 });
