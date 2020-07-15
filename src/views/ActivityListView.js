@@ -5,7 +5,7 @@ export const ActivityListView = Backbone.View.extend ({
   className: 'app__panel',
   template: _.template($("#activity-table").html()),
   events: {
-    "keydown .filter": "filterData",
+    "keyup .filter": "filterData",
   },
   initialize: function () {
     // Listen for events on Collection
@@ -18,6 +18,7 @@ export const ActivityListView = Backbone.View.extend ({
     this.$el.append(this.template());
     
     this.$table = this.$el.find(".table");
+    this.$filter = this.$el.find(".filter");
 
     this.collection.each(this.addItem, this);
 
@@ -35,7 +36,7 @@ export const ActivityListView = Backbone.View.extend ({
     this.$table.append(activityView.render().el);
   },
   filterData: function (event) {
-    let filter = event.target.value.toLowerCase();
+    let filter = this.$filter.val().toLowerCase();
 
     this.$table.find(".table__row--data").filter( function () {
       // NB: Cannot use the ES6 function here because I require
