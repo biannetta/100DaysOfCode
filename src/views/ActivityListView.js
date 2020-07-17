@@ -17,6 +17,7 @@ export const ActivityListView = Backbone.View.extend ({
   render: function () {
     this.$el.append(this.template());
     
+    // Set jquery reference to table and filter elements
     this.$table = this.$el.find(".table");
     this.$filter = this.$el.find(".filter");
 

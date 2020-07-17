@@ -1,28 +1,40 @@
 /* Main Stylesheet for 100Day App */
+/* Import variables and google fonts */
+@import "variables.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 /* TODO: This does something, will google later*/
 * {
   box-sizing: border-box;
 }
+body {
+  margin: 0px;
+  background-color: var(--primary-color-variant);
+}
 
-/* Hero Styling */
-.hero {
-  font-size: 22px;
+.app {
+  font-family: 'Roboto', sans-serif;
+}
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app__hero {
+  background-color: var(--primary-color);
+  font-weight: bold;
+  color: var(--on-primary);
+  font-size: var(--app-large);
   text-align: center;
 }
-.hero--title {
-  font-weight: bold;
-}
-
-/* Panel Styling */
 .app__content {
   display: flex;
 }
 .app__panel {
+  background-color: var(--primary-bg-color);
   width: 100%;
 }
 
-/* Grid style layout */
 .table {
   display: grid;
   grid-template: 1fr / 1fr;

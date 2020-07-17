@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #6200ee;
+  --primary-color-variant: #3700b3;
+  --primary-bg-color: #ffffff;
+
+  --secondary-color:#03dac6;
+  --secondary-color-variant: #018786;
+
+  --on-primary: whitesmoke;
+  --on-secondary: black;
+
+  --app-x-large: 50px;
+  --app-large: 30px;
+  --app-medium: 20px;
+  --app-regular: 15px;
+  --app-small: 10px;
+  --app-x-small: 6px;
+}
