@@ -15,6 +15,11 @@ body {
 .app {
   font-family: 'Roboto', sans-serif;
 }
+.app__main {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  height: 100vh;
+}
 .app__header {
   display: flex;
   align-items: center;
@@ -26,13 +31,19 @@ body {
   color: var(--on-primary);
   font-size: var(--app-large);
   text-align: center;
+  padding: 10px 0px;
 }
 .app__content {
+  background-color: var(--primary-bg-color);
   display: flex;
 }
 .app__panel {
-  background-color: var(--primary-bg-color);
   width: 100%;
+  margin: 10px;
+}
+.app__footer {
+  text-align: center;
+  padding: 5px;
 }
 
 .table {
