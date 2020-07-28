@@ -3,7 +3,7 @@ import { ActivityListView, ActivityItemEditView } from './index.js';
 export const AppView = Backbone.View.extend ({
   initialize: function () {
     // Init DOM elements
-    this.$content = $('.app__content');
+    this.$content = $('.content');
    },
   render: function() {
     // Create new ActivityList

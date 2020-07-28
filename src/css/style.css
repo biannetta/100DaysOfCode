@@ -14,18 +14,16 @@ body {
 
 .app {
   font-family: 'Roboto', sans-serif;
-}
-.main {
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   height: 100vh;
 }
-.app__header {
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.app__hero {
+.hero {
   background-color: var(--primary-color);
   font-weight: bold;
   color: var(--on-primary);
@@ -33,15 +31,15 @@ body {
   text-align: center;
   padding: 10px 0px;
 }
-.app__content {
+.content {
   background-color: var(--primary-bg-color);
   display: flex;
 }
-.app__panel {
+.panel {
   width: 100%;
   margin: 10px;
 }
-.app__footer {
+.footer {
   text-align: center;
   padding: 5px;
 }

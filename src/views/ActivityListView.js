@@ -2,7 +2,7 @@ import { ActivityItemView } from "./ActivityItemView.js";
 
 export const ActivityListView = Backbone.View.extend ({
   tagName: 'div',
-  className: 'app__panel',
+  className: 'panel',
   template: _.template($("#activity-table").html()),
   events: {
     "keyup .filter": "filterData",
