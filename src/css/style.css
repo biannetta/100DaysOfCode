@@ -19,10 +19,36 @@ body {
   height: 100vh;
 }
 .header {
+  background: linear-gradient(180.69deg, #E95858 2.06%, rgba(255, 238, 149, 0) 83.47%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.hdc_calendar {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border: 3px solid rgba(233, 88, 88, 0.8);
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 150px;
+  height: 184px;
+}
+.hdc_calendar__text {
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+}
+.hdc_calendar__text--large {
+  font-size: 96px;
+}
+.hdc_calendar__text--small {
+  font-size: 24px;
+}
+
 .hero {
   background-color: var(--primary-color);
   font-weight: bold;

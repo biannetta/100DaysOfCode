@@ -11,7 +11,7 @@ export const AppView = Backbone.View.extend ({
     let activityEditor = new ActivityItemEditView({ collection: this.collection });
     
     this.$content.append(activityList.render().el);
-    this.$content.append(activityEditor.render().el);
+    // this.$content.append(activityEditor.render().el);
 
     return this;
   },
