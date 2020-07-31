@@ -9,13 +9,13 @@
 }
 body {
   margin: 0px;
-  background-color: var(--primary-color-variant);
+  background-color: var(--on-primary);
 }
 
 .app {
   font-family: 'Roboto', sans-serif;
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   height: 100vh;
 }
 .header {
@@ -23,6 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 85px;
 }
 
 .hdc_calendar {
@@ -30,8 +31,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FFFFFF;
-  border: 3px solid rgba(233, 88, 88, 0.8);
+  background: var(--on-primary);
+  border: 3px solid var(--primary-color);
   box-sizing: border-box;
   border-radius: 10px;
   width: 150px;
@@ -49,16 +50,8 @@ body {
   font-size: 24px;
 }
 
-.hero {
-  background-color: var(--primary-color);
-  font-weight: bold;
-  color: var(--on-primary);
-  font-size: var(--app-large);
-  text-align: center;
-  padding: 10px 0px;
-}
 .content {
-  background-color: var(--primary-bg-color);
+  background-color: var(--on-primary);
   display: flex;
 }
 .panel {
@@ -66,6 +59,7 @@ body {
   margin: 10px;
 }
 .footer {
+  height: 50px;
   text-align: center;
   padding: 5px;
 }

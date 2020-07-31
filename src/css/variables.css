@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #6200ee;
-  --primary-color-variant: #3700b3;
+  --primary-color: #E95858;
+  --primary-color-variant: #FFEE95;
   --primary-bg-color: #ffffff;
 
   --secondary-color:#03dac6;
   --secondary-color-variant: #018786;
 
-  --on-primary: whitesmoke;
+  --on-primary: #FFF;
   --on-secondary: black;
 
   --app-x-large: 50px;
