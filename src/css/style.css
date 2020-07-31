@@ -9,7 +9,7 @@
 }
 body {
   margin: 0px;
-  background-color: var(--on-primary);
+  background-color: rgba(255, 238, 149, 0.1);
 }
 
 .app {
@@ -19,11 +19,11 @@ body {
   height: 100vh;
 }
 .header {
-  background: linear-gradient(180.69deg, #E95858 2.06%, rgba(255, 238, 149, 0) 83.47%);
+  background: linear-gradient(180deg, #E95858 2%, rgba(255, 238, 149, 0.1) 93%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 85px;
+  padding-top: 65px;
 }
 
 .hdc_calendar {
@@ -53,6 +53,7 @@ body {
 .content {
   background-color: var(--on-primary);
   display: flex;
+  margin: 10px 25px;
 }
 .panel {
   width: 100%;
