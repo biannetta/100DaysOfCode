@@ -10,17 +10,16 @@
   </head>
   <body>
     <div id="app" class="app">
-      <header class="header">
-        <div class="hdc_calendar">
-          <div class="hdc_calendar__text hdc_calendar__text--large">29</div>
-          <div class="hdc_calendar__text hdc_calendar__text--small">Thursday</div>
-        </div>
-      </header>
+      <header class="header"></header>
       <div class="content"></div>
       <footer class="footer">Made with ☕️ by <a href="https://github.com/biannetta/100DaysOfCode">@biannetta</a></footer>
     </div>
 
     <!-- JS Templates -->
+    <script type="text/template" id="hdc_calendar">
+      <div class="hdc_calendar__text hdc_calendar__text--large hdc_date"><%= day %></div>
+      <div class="hdc_calendar__text hdc_calendar__text--small hdc_dayofweek"><%= dayOfWeek %></div>
+    </script>
     <script type="text/template" id="activity-data-entry">
       <div class="table">
         <div class="table__row">
