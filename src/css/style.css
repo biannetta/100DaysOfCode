@@ -26,27 +26,30 @@ body {
   padding-top: 65px;
 }
 
-.hdc_calendar {
+.hdc_card {
   flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--on-primary);
-  border: 3px solid var(--primary-color);
   box-sizing: border-box;
   border-radius: 10px;
   width: 150px;
   height: 184px;
 }
-.hdc_calendar__text {
+.hdc_card--calendar {
+  background: var(--on-primary);
+  border: 3px solid var(--primary-color);
+}
+.hdc_card__text {
   text-align: center;
   font-style: normal;
   font-weight: bold;
 }
-.hdc_calendar__text--large {
+.hdc_card__text--large {
   font-size: 96px;
 }
-.hdc_calendar__text--small {
+.hdc_card__text--small {
   font-size: 24px;
 }
 
