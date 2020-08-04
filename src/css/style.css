@@ -31,7 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--on-primary);
+  background: rgba(196, 196, 196, 0.55);
   box-sizing: border-box;
   border-radius: 10px;
   width: 150px;
@@ -47,16 +47,22 @@ body {
   font-weight: bold;
 }
 .hdc_card__text--large {
-  font-size: 96px;
+  font-size: var(--app-x-large);
 }
 .hdc_card__text--small {
-  font-size: 24px;
+  font-size: var(--app-medium);
 }
 
 .content {
-  background-color: var(--on-primary);
+  width: 100vw;
   display: flex;
-  margin: 10px 25px;
+}
+.hdc_collection {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 20px;
+  height: 250px;
+  overflow-x: scroll;
 }
 .panel {
   width: 100%;

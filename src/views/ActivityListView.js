@@ -1,9 +1,9 @@
 import { ActivityItemView } from "./ActivityItemView.js";
-import { ActivityCardView } from "./ActivityCardView.js";
 
 export const ActivityListView = Backbone.View.extend ({
   tagName: 'div',
   className: 'cardlist',
+  template: _.template($("#activity-table").html()),
   events: {
     "keyup .filter": "filterData",
   },
@@ -15,10 +15,11 @@ export const ActivityListView = Backbone.View.extend ({
     this.listenTo(this.collection, "filter", this.addItems);
   },
   render: function () {
-    this.$el.html();
+    this.$el.html(this.template());
     
     // Set jquery reference to table and filter elements
-    // this.$filter = this.$el.find(".filter");
+    this.$table = this.$el.find(".table");
+    this.$filter = this.$el.find(".filter");
 
     this.collection.each(this.addItem, this);
 
@@ -28,11 +29,11 @@ export const ActivityListView = Backbone.View.extend ({
     this.collection.each(this.addItem, this);
   },
   addItem: function (activity) {
-    let activityCard = new ActivityCardView({ 
+    let activityItem = new ActivityItemView({ 
       model: activity,
       attributes: { "data-type": activity.get('type') }
     });
-    this.$el.append(activityCard.render().el);
+    this.$table.append(activityItem.render().el);
   },
   filterData: function (event) {
     let filter = this.$filter.val().toLowerCase();

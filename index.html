@@ -21,7 +21,14 @@
       <div class="hdc_card__text hdc_card__text--large"><%= text %></div>
       <div class="hdc_card__text hdc_card__text--small"><%= subtext %></div>
     </script>
-    
+
+    <!-- Table Row Template -->
+    <script type="text/template" id="activity-item--display">
+      <div><%= formatted_activity_date %></div>
+      <div><%= activity_type %></div>
+      <div><%= activity_quantity %></div>
+    </script> 
+   
     <!--  -->
     <script type="text/template" id="activity-data-entry">
       <div class="table">
@@ -41,6 +48,7 @@
       <button class="button button--save">Save</button>
     </script>
 
+    <!--  -->
     <script type="text/template" id="activity-table">
       <!-- Table Listing for Activities -->
       <input type="text" class="filter" placeholder="Search" />
@@ -53,12 +61,6 @@
       </div>
     </script>
       
-    <script type="text/template" id="activity-item--display">
-      <div><%= formatted_activity_date %></div>
-      <div><%= activity_type %></div>
-      <div><%= activity_quantity %></div>
-    </script> 
-   
     <!-- Javascript -->
     <script src="node_modules/underscore/underscore.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
