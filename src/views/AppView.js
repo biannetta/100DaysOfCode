@@ -1,5 +1,5 @@
 import { ActivityCardCollectionView } from './ActivityCardCollectionView.js';
-import { CalendarCardView } from '../components/CalendarCard.js';
+import { CalendarBannerView } from './CalendarBannerView.js';
 
 export const AppView = Backbone.View.extend ({
   initialize: function () {
@@ -10,13 +10,11 @@ export const AppView = Backbone.View.extend ({
    },
   render: function() {
     // Creat Calendar Card
-    let calendarCard = new CalendarCardView();
-
-    this.$header.append(calendarCard.render().el);
+    let calendarSelector = new CalendarBannerView();
+    this.$header.append(calendarSelector.render().el);
 
     // Create new ActivityCardCollection
     let activityCollection = new ActivityCardCollectionView({ collection: this.collection });
-
     this.$content.append(activityCollection.render().el);
 
     return this;

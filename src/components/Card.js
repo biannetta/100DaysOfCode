@@ -1,4 +1,4 @@
-export const CardView = Backbone.View.extend({
+export const CardComponent = Backbone.View.extend({
   tagName: 'div',
   className: "hdc_card",
   template: _.template($("#hdc_card").html()),

@@ -1,6 +1,7 @@
 /* Main Stylesheet for 100Day App */
 /* Import variables and google fonts */
 @import "variables.css";
+@import "utils.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 /* TODO: This does something, will google later*/
@@ -17,9 +18,9 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
+  background: linear-gradient(180deg, #E95858 2%, rgba(255, 238, 149, 0.1) 93%);
 }
 .header {
-  background: linear-gradient(180deg, #E95858 2%, rgba(255, 238, 149, 0.1) 93%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +53,6 @@ body {
 .hdc_card__text--small {
   font-size: var(--app-medium);
 }
-
 .content {
   width: 100vw;
   display: flex;
@@ -63,10 +63,6 @@ body {
   padding: 30px 20px;
   height: 250px;
   overflow-x: scroll;
-}
-.panel {
-  width: 100%;
-  margin: 10px;
 }
 .footer {
   height: 50px;
@@ -83,17 +79,14 @@ body {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
 .table__row--title {
   grid-template-columns: 1fr;
   align-items: center;
   border-bottom: 1px solid black;
 }
-
 .table__row--header {
   font-weight: bold;
 }
-
 .table__title {
   text-align: center;
 }
