@@ -4,3 +4,14 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.scaled {
+  transform: scale(0.7);
+  opacity: 0.5;
+  z-index: -100;
+}
+.scaled--left {
+  margin-right: -50px;
+}
+.scaled--right {
+  margin-left: -50px;
+}
