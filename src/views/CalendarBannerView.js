@@ -12,7 +12,7 @@ export const CalendarBannerView = Backbone.View.extend({
     for (var i of [-1, 0, 1]) {
       // TODO: Refactor CSS of this, not sure i like nested ternary operators
       let dateCard = new CardComponent({
-        className: "hdc_card hdc_card--calendar" + (i < 0 ? ' scaled scaled--left': i > 0 ? ' scaled scaled--right': ''),
+        className: "hdc_card hdc_card--calendar" + (i < 0 ? ' scaled scaled--left': i > 0 ? ' scaled scaled--right': ' overlay'),
         text: this.todaysDate.getDate() + i,
         subtext: alpha_dayOfWeek[this.todaysDate.getDay() + i], 
       });
