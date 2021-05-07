@@ -26,7 +26,7 @@
   "devDependencies": {
     "backbone": "^1.4.0",
     "jquery": "^3.5.1",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "dependencies": {
     "material-components-web": "^7.0.0"
